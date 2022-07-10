@@ -1,20 +1,22 @@
-#include<iostream>
+/*Accept character from uer & display its digits ASCII value in decimal,octal,hexadecimal format.
+I/P : A
+O/P : Decimal  65
+       Octal   0101
+ Hexadecimal    0X41
+*/
+ #include<iostream>
 using namespace std;
+ void Display(char ch)
+ {
 
-void Display(char str[])
-{
-    int i=0;
-    while(*str!=0)
-    {
-        cout<<*str<<endl;
-        str++;
-    }
-}
-int main()
-{
-    char Arr[] = "Hello";
-    int i=0;
+ }
+ int main()
+ {
+     char cValue='\0';
+    cout<<"Enter any Character"<<endl;
+    cin>>cValue;
+    Display(cValue);
 
- Display(Arr);    //Display(100);
     return 0;
-}
+
+ }

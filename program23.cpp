@@ -1,39 +1,35 @@
-//Accept string from user & Reverce the string in place
+//accept strin from user and Accept one character. & return index of first occurance
+//of that character.
 
 #include<iostream>
 using namespace std;
-
-void strrevX(char *str)
+int FirstOccurance(char *str,char ch)
 {
-   char *start = str;
-   char *end = str; 
-    char temp;
-    while (*end!='\0')
+    int i=0;
+  
+    for(i=0;i<str[i];i++)
     {
-        end++;
+        if(ch==str[i])
+        {
+            return i;
+        }
     }
-    end--;
-
-    while(start < end)
-    {
-        temp = *start;
-        *start = *end;
-        *end = temp;
-
-        start++;
-        end--;
-    }
-    
+    return -1;
 }
 int main()
 {
-    char Arr[20];
+    char Arr[20],cValue='\0';
+    int iRet=0;
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    cout<<"Enter chracter to search first index from string"<<endl;
+    cin>>cValue;
+
+    iRet=FirstOccurance(Arr,cValue);
+    cout<<" First index of  "<<cValue<<" is "<< iRet<<endl;
+    
     
 
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    strrevX(Arr);
-    cout<<"String after Reverse : "<<Arr<<endl;
     return 0;
+    
 }

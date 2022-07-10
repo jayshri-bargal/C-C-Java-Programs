@@ -1,30 +1,25 @@
-//Accept string from user  Count number of Vowels   //  Case sensitive
+// W.A.P which accept string from user And Display only digits from that String
 #include<iostream>
 using namespace std;
 
-int CountVowel(char str[])
+void strDigit(char *str)
 {
-    int iCnt=0;
     while(*str!='\0')
     {
-        if((*str=='a') ||(*str=='e') || (*str=='i') ||(*str=='o') ||(*str=='u')||(*str=='A') ||(*str=='E') || (*str=='I') ||(*str=='O') ||(*str=='U'))
+        if((*str>=48)&&(*str<=57))
         {
-            iCnt++;
+            cout<<*str<<"  ";
         }
         str++;
     }
-    return iCnt;
 }
 int main()
 {
     char Arr[20];
-    int iRet=0;
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    strDigit(Arr);
+    cout<<"Digits from String "<<Arr<<endl;
 
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    iRet=CountVowel(Arr);
-    cout<<"Number of Vowels in String are:"<<iRet<<" times "<<endl;
     return 0;
 }
-

@@ -1,28 +1,35 @@
-//Accept string from user & copy that string into another string
+//accept string from user and Accept one character. & return index of last occurance
+//of that character.
 
 #include<iostream>
 using namespace std;
-
-void strcpyX(char *src,char *dest)
+int FirstOccurance(char *str,char ch)
 {
-  while(*src!='\0')
-  {
-    *dest=*src;
-    src++;
-    dest++;
-  }
-
-    *dest ='\0';
+    int i=0,LastIndex=-1;
+  
+    for(i=0;i<str[i];i++)
+    {
+        if(ch==str[i])
+        {
+            LastIndex= i;
+        }
+    }
+    return LastIndex;
 }
 int main()
 {
-    char Arr[20];      //Bharleli wahi
-    char Brr[20];       //Kori wahi  
+    char Arr[20],cValue='\0';
+    int iRet=0;
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    cout<<"Enter chracter to search Last index from string"<<endl;
+    cin>>cValue;
 
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
+    iRet=FirstOccurance(Arr,cValue);
+    cout<<" Last index of  "<<cValue<<" is "<< iRet<<endl;
+    
+    
 
-    strcpyX(Arr,Brr);
-    cout<<"String after copy : "<<Arr<<endl;
     return 0;
+    
 }

@@ -1,23 +1,19 @@
-//
+//wap which displays AsCII table .Table contain Symbol,Decimal,HeXadecimal
+// And oCtal of every member from 0 to 255.
+
 #include<iostream>
 using namespace std;
 
-void Display(char str[])
+void DisplayASCII()
 {
-    
-    while(*str!=0)
+    int i=0;
+    for(i=0; i<=255; i++)
     {
-        cout<<*str<<endl;
-        str++;
+        cout<<" "<<(char)i<<i;
     }
 }
 int main()
 {
-    char Arr[20];
-
-    cout<<"Enter string"<<endl;
-    cin>>Arr[20];
-
- Display(Arr);    //Display(100);
+    DisplayASCII();
     return 0;
 }

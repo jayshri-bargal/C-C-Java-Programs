@@ -1,29 +1,26 @@
-//Count the OCCurance of letter l 
+//WAP which accept string from user & count number of Small characters
 #include<iostream>
 using namespace std;
-
-int CountL(char str[])
+int CountSmall(char *src)
 {
-    int iCnt=0;
-    while(*str!='\0')
+    int count=0;
+    while(*src!='\0')
     {
-        if((*str=='l') || (*str == 'L'))
+        if((*src>='a') && (*src<='z'))
         {
-            iCnt++;
+            count++;
         }
-        str++;
+        src++;
     }
-    return iCnt;
+    return count;
 }
 int main()
 {
-    char Arr[20];
     int iRet=0;
-
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    iRet=CountL(Arr);
-    cout<<"String Contain l: "<<iRet<<" times "<<endl;
+    char Arr[20];
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    iRet=CountSmall(Arr);
+    cout<<"Number of Small Characters Are:"<<iRet<<endl;
     return 0;
 }

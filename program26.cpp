@@ -1,38 +1,26 @@
-//Accept two string from user And perform string concatination
-//string concatination
-
+//accept string from user & copy the content of that string into another string.
 #include<iostream>
 using namespace std;
 
-void strcatX(char *src,char *dest)
+void StrCpyX(char *src,char *dest)
 {
-    while(*src!='\0')
-    {
-        src++;
-    }
-
-  while(*dest!='\0')
-  {
-    *src=*dest;
+while(*src!='\0')
+{
+    *dest=*src;
     src++;
     dest++;
-  }
-
-    *src ='\0';
+}
+*dest='\0';
 }
 int main()
 {
-    char Arr[20];      //Bharleli wahi
-    char Brr[20];       //Kori wahi  
+    char Arr[20],Brr[20];
+    cout<<"Enter string  "<<endl;
+    cin.getline(Arr,20);
 
-    cout<<"Enter First string"<<endl;
-   cin.getline(Arr,20);
+    StrCpyX(Arr,Brr);
+    cout<<"updated String is  "<<Brr<<endl;
 
-    cout<<"Enter Second string"<<endl;
-    cin.getline(Brr,20);
-
-    strcatX(Arr,Brr);
-
-    cout<<"String after concatination : "<<Arr<<endl;
     return 0;
+    
 }

@@ -1,4 +1,4 @@
-//accept string from user & copy the capital character of that 
+//accept string from user & copy the small character of that 
 // into another string
 #include<iostream>
 using namespace std;
@@ -7,7 +7,7 @@ void StrCpyX(char *src,char *dest)
 {
 while(*src!='\0')
 {
-    if((*src>='A') && (*src<='Z'))
+    if((*src>='a') && (*src<='z'))
     {
     *dest=*src;
     dest++;

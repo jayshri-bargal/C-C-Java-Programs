@@ -1,30 +1,35 @@
-//Accept string from user  Count Capital Character using ASCII value
+//WAP which accept string from user & check whether it contain vowel or not.
 #include<iostream>
 using namespace std;
-
-int CountCapital(char str[])
+bool ChkVowel(char *src)
 {
-    int iCnt=0;
-    while(*str!='\0')
+    while(*src!='\0')
     {
-        if((*str>=65) && (*str <=90))
+        if((*src=='a') || (*src=='e')||(*src=='i')||(*src=='o')||(*src=='u'))
         {
-            iCnt++;
+            return true;
         }
-        str++;
+
+        src++;
     }
-    return iCnt;
+  
 }
+
 int main()
 {
+    bool bRet;
     char Arr[20];
-    int iRet=0;
-
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    iRet=CountCapital(Arr);
-    cout<<"Capital Characters in String are:"<<iRet<<" times "<<endl;
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    bRet=ChkVowel(Arr);
+    if(bRet==true)
+    {
+        cout<<"It Contain Vowel"<<endl;
+    }
+    else
+    {
+        cout<<"there is no vowel"<<endl;
+    }
+    
     return 0;
 }
-

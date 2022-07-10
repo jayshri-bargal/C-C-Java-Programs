@@ -1,30 +1,28 @@
-//Accept string from user  Count number of Vowels
+//WAP which accept string from user And toggle that string
 #include<iostream>
 using namespace std;
 
-int CountVowel(char str[])
+void strtogglex(char *str)
 {
-    int iCnt=0;
     while(*str!='\0')
     {
-        if((*str=='a') ||(*str=='e') || (*str=='i') ||(*str=='o') ||(*str=='u'))
+        if((*str>='a')&&(*str<='z'))
         {
-            iCnt++;
+            *str = *str-32;
+        }
+        else if((*str>='A')&&(*str<='Z'))
+        {
+            *str = *str +32;
         }
         str++;
     }
-    return iCnt;
 }
 int main()
 {
     char Arr[20];
-    int iRet=0;
-
     cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    iRet=CountVowel(Arr);
-    cout<<"Number of Vowels in String are:"<<iRet<<" times "<<endl;
+    cin.getline(Arr,20);
+    strtogglex(Arr);
+    cout<<"Modified String is  "<<Arr<<endl;
     return 0;
 }
-

@@ -1,49 +1,31 @@
-//Accept two string from user & compaire that string (compaire length)
+/*accept string from user & copy the content of that string into another string
+I/P:    "Marvellous Multi os"
+            10
+O/P:         "Maevellous"
+Note:    if third parameter is greater than the size of source string then copy 
+whole string into destination
+*/
 #include<iostream>
 using namespace std;
-
-bool strcmpX(char *src,char *dest)
+void StrCpyX(char *src,char *dest,int iCnt)
 {
-    while((*src!='\0') &&(*dest!=0))
+    //Filter
+    while((*src!='\0') && (iCnt!=0))
     {
-        if(*src != *dest)
-        {
-            break;
-        }
+        *dest=*src;
         src++;
-        dest++; 
+        dest++;
+        iCnt--;
     }
-
-    if(*src=='\0' && *dest == '\0')
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-    
+    *dest='\0';
 }
 int main()
 {
-    char Arr[20];      //Bharleli wahi
-    char Brr[20];       //Kori wahi  
-    bool bRet;
-    cout<<"Enter First string"<<endl;
-   cin.getline(Arr,20);
-
-    cout<<"Enter Second string"<<endl;
-    cin.getline(Brr,20);
-
-    bRet=strcmpX(Arr,Brr);
-    if(bRet==true)
-    {
-        cout<<"String are equal"<<endl;
-    }
-    else
-    {
-        cout<<"String are not equal"<<endl;
-    }
+    char Arr[20],Brr[20];
+    cout<<"Enter String "<<endl;
+    cin.getline(Arr,20);
+    StrCpyX(Arr,Brr,10);
+    cout<<"updated String is :"<<Brr<<endl;
 
     return 0;
 }

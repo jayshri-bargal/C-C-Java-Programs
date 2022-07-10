@@ -1,29 +1,29 @@
-//Accept string form user &convert that string into lower case
+//WAP which accept string from user &count white spaces
 #include<iostream>
 using namespace std;
-
-void strlwrX(char str[])
+int strspace(char *str)
 {
+    int count=0;
     while(*str!='\0')
     {
-        if((*str >='A') && (*str <='Z'))
+        if(*str==' ')
         {
-            *str = *str + 32;
+        count++;
         }
         str++;
     }
-    
+
+    return count;
 }
 int main()
 {
     char Arr[20];
-    
+    int iRet=0;
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    iRet=strspace(Arr);
+    cout<<"White spaces in string  " <<iRet <<" times"<<endl;
 
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    strlwrX(Arr);
-    cout<<"String in Lower case: "<<Arr<<endl;
     return 0;
+    
 }
-

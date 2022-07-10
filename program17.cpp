@@ -1,30 +1,27 @@
-//Accept string from user  Count space
+//WAP which accept string from user & conver that Strng into uper case
+
 #include<iostream>
 using namespace std;
 
-int CountSpace(char str[])
+void struprx(char *str)
 {
-    int iCnt=0;
     while(*str!='\0')
     {
-        if(*str ==' ')
+        if((*str>='a')&&(*str<='z'))
         {
-            iCnt++;
+        *str = *str - 32;
         }
         str++;
     }
-    return iCnt;
 }
 int main()
 {
     char Arr[20];
-    int iRet=0;
 
     cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
+    cin.getline(Arr,20);
 
-    iRet=CountSpace(Arr);
-    cout<<"Number of spaces in the String:"<<iRet<<" times "<<endl;
+    struprx(Arr);
+    cout<<"modified String is  " <<Arr<<endl;
     return 0;
 }
-

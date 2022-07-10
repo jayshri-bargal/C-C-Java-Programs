@@ -1,23 +1,41 @@
-//
+/*Accept character from user. if it is small display its corrosponding capital
+//character, and if it is capital display its corrosponding small.in other 
+//display as it is
+Input: Q
+Output: q
+Input: m
+Output: M
+I/p:   4
+O/p    4
+I/P:   #
+ O/P   #
+ */
 #include<iostream>
 using namespace std;
-
-void Display(char str[])
+void Display(char ch)
 {
-    
-    while(*str!=0)
+    if((ch>='a')&&(ch<='z'))
     {
-        cout<<*str<<endl;
-        str++;
+        ch=ch-32;
+        cout<<ch<<endl;
     }
-}
+    else if((ch>='A')&&(ch<='Z'))
+    {
+        ch=ch+32;
+        cout<<ch<<endl;
+    }
+    else if((ch>=32)&&(ch<=57))
+    {
+        cout<<ch<<endl;
+    }
+    
+}   
 int main()
 {
-    char Arr[20];
+    char cValue='\0';
+    cout<<"Enter a character"<<endl;
+    cin>>cValue;
+    Display(cValue);
 
-    cout<<"Enter string"<<endl;
-    scanf("%s",Arr);
-
- Display(Arr);    //Display(100);
     return 0;
 }

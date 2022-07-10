@@ -1,20 +1,34 @@
+//Accept character from user & check whether it is special Symbol or not
+//(!,@,#,$,%,^,&,*).
+
 #include<iostream>
 using namespace std;
-
-void Display(char *str)
+bool ChkSpecial(char ch)
 {
-    int i=0;
-    while(*str!=0)
+    if((ch=='!') || (ch=='@')||(ch=='$')||(ch=='%')||(ch=='^')||(ch=='#')||(ch=='*')||(ch=='&'))
     {
-        cout<<*str<<endl;
-        str++;
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 int main()
 {
-    char Arr[] = "Hello";
-    int i=0;
+    bool bRet;
+    char cValue='\0';
+    cout<<"Enter any Symbol"<<endl;
+    cin>>cValue;
+   bRet = ChkSpecial(cValue);
+   if(bRet==true)
+   {
+       cout<<"it is a Symbol"<<endl;
+   }
+   else
+   {
+       cout<<"it is not a Symbol"<<endl;
+   }
 
- Display(Arr);    //Display(100);
-    return 0;
+   return 0;
 }

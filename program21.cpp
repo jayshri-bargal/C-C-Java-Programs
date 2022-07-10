@@ -1,29 +1,38 @@
-//Accept string form user &convert that string into Upper case
+//accept strin from user and Accept one character.check whether that character
+//is present in string or not.
 #include<iostream>
 using namespace std;
-
-void struprX(char str[])
+bool ChkChar(char *str,char ch)
 {
     while(*str!='\0')
     {
-        if((*str >='a') && (*str <='z'))
+        if(*str==ch)
         {
-            *str = *str - 32;
+            return true;
         }
+        
         str++;
     }
-    
 }
 int main()
 {
-    char Arr[20];
-    
+    char Arr[20],cValue='\0';
+    bool bRet=false;
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    cout<<"Enter chracter to search from string"<<endl;
+    cin>>cValue;
 
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
+    bRet=ChkChar(Arr,cValue);
+    if(bRet==true)
+    {
+        cout<<cValue<<"  present in string"<<endl;
+    }
+    else
+    {
+        cout<<cValue<<"  not present in String"<<endl;
+    }
 
-    struprX(Arr);
-    cout<<"String in Upper case: "<<Arr<<endl;
     return 0;
+    
 }
-

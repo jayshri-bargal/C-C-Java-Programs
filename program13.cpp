@@ -1,29 +1,31 @@
-//Accept string from user  Count Capital Character
+//WAP which accept string from user & return diff bet frequency of
+//small character & frequency of capita character
 #include<iostream>
 using namespace std;
-
-int CountCapital(char str[])
+int DiffFrequency(char *src)
 {
-    int iCnt=0;
-    while(*str!='\0')
+    int count=0,count1=0;
+    while(*src!='\0')
     {
-        if((*str>='A') && (*str <='Z'))
+        if((*src>='a') && (*src<='z'))
         {
-            iCnt++;
+            count++;
         }
-        str++;
+        else if((*src>='A') && (*src<='Z'))
+        {
+            count1++;
+        }
+        src++;
     }
-    return iCnt;
+    return count-count1;
 }
 int main()
 {
-    char Arr[20];
     int iRet=0;
-
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    iRet=CountCapital(Arr);
-    cout<<"Capital Characters in String are:"<<iRet<<" times "<<endl;
+    char Arr[20];
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    iRet=DiffFrequency(Arr);
+    cout<<"difference between frequency :"<<iRet<<endl;
     return 0;
 }

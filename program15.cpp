@@ -1,30 +1,29 @@
-//Accept string from user  Count Small Character 
+//WAP which accept string from user & display it in Reverse order
 #include<iostream>
 using namespace std;
-
-int CountSmall(char str[])
+void Reverce(char *str)
 {
-    int iCnt=0;
-    while(*str!='\0')
+   int Length=0,i=0;
+   char ch;
+    for(Length=0;str[Length];Length++);
+    
+    cout<<"length of the entered string is  "<<Length<<endl;
+    for(i=0;i<Length/2;i++)
     {
-        if((*str>='a') && (*str <='z'))
-        {
-            iCnt++;
-        }
-        str++;
+        ch=str[i];
+        str[i]=str[Length-1-i];
+        str[Length-1-i] = ch;
     }
-    return iCnt;
+    
 }
+
 int main()
 {
-    char Arr[20];
     int iRet=0;
-
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    iRet=CountSmall(Arr);
-    cout<<"Small Characters in String are:"<<iRet<<" times "<<endl;
+    char Arr[20];
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    Reverce(Arr);
+    cout<<"String after Reverse  " <<Arr <<endl;
     return 0;
 }
-

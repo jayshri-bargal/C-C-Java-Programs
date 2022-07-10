@@ -1,30 +1,26 @@
-//Accept string from user  Count Small Character using AsCII value
+//WAP which accept String from user and Convert that string into lower case
 #include<iostream>
 using namespace std;
 
-int CountSmall(char str[])
+void strlwrX(char *str)
 {
-    int iCnt=0;
     while(*str!='\0')
     {
-        if((*str>=97) && (*str <=122))
+        if((*str>='A')&&(*str<='Z'))
         {
-            iCnt++;
+            *str=*str+32;
         }
         str++;
     }
-    return iCnt;
+   
 }
 int main()
 {
     char Arr[20];
-    int iRet=0;
 
-    cout<<"Enter string"<<endl;
-   cin.getline(Arr,20);
-
-    iRet=CountSmall(Arr);
-    cout<<"Small Characters in String are:"<<iRet<<" times "<<endl;
+    cout<<"Enter String "<<endl;
+    cin.getline(Arr,20);
+    strlwrX(Arr);
+    cout<<"Modified String is  " <<Arr<<endl;
     return 0;
-}
-
+} 

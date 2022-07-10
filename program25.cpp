@@ -1,37 +1,32 @@
-//Accept two string from user And perform string concatination
-//string concatination
+//accept string from user  Reverse that string in place.
 #include<iostream>
 using namespace std;
-
-void strcatX(char *src,char *dest)
+void Reverse(char *str)
 {
-    while(*dest!='\0')
-    {
-        dest++;
-    }
-
-  while(*src!='\0')
-  {
-    *dest=*src;
-    src++;
-    dest++;
-  }
-
-    *dest ='\0';
+        char *end=str;
+        char *start=str;
+        char temp;
+        while(*end!='\0')
+        {
+            end++;
+        }
+        end--;
+        while(start<end)
+        {
+            temp=*start;
+            *start=*end;
+            *end=temp;
+           start++;
+           end--;
+        }
+        
 }
 int main()
 {
-    char Arr[20];      //Bharleli wahi
-    char Brr[20];       //Kori wahi  
-
-    cout<<"Enter First string"<<endl;
-   cin.getline(Arr,20);
-
-    cout<<"Enter Second string"<<endl;
-    cin.getline(Brr,20);
-
-    strcatX(Arr,Brr);
-
-    cout<<"String after concatination : "<<Brr<<endl;
+    char Arr[20];
+    cout<<"Enter String"<<endl;
+    cin.getline(Arr,20);
+    Reverse(Arr);
+    cout<<"Reverse string is  "<<Arr<<endl;
     return 0;
 }
